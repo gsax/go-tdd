@@ -12,6 +12,8 @@ func (b Bitcoin) String() string {
 	return fmt.Sprintf("%d BTC", b)
 }
 
+var ErrInsufficientFunds = errors.New("cannot withdraw, insufficient funds")
+
 // Wallet stores the number of Bitcoin someone owns.
 type Wallet struct {
 	balance Bitcoin
@@ -26,7 +28,7 @@ func (w *Wallet) Deposit(amount Bitcoin) {
 func (w *Wallet) Withdraw(amount Bitcoin) error {
 
 	if amount > w.balance {
-		return errors.New("cannot withdraw, insufficient funds")
+		return ErrInsufficientFunds
 	}
 
 	w.balance -= amount
