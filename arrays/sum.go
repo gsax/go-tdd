@@ -1,5 +1,6 @@
 package main
 
+// Sum two integers
 func Sum(numbers []int) int {
 	sum := 0
 	for _, number := range numbers {
@@ -8,6 +9,7 @@ func Sum(numbers []int) int {
 	return sum
 }
 
+// SumAll given integers
 func SumAll(numbersToSum ...[]int) []int {
 	var sums []int
 	for _, numbers := range numbersToSum {
@@ -17,6 +19,7 @@ func SumAll(numbersToSum ...[]int) []int {
 	return sums
 }
 
+// SumAllTails sum all tails of given integers
 func SumAllTails(numbersToSum ...[]int) []int {
 	var sums []int
 	for _, numbers := range numbersToSum {

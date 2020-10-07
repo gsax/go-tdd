@@ -12,6 +12,7 @@ func (b Bitcoin) String() string {
 	return fmt.Sprintf("%d BTC", b)
 }
 
+// ErrInsufficientFunds wallet hasn't enought Bitcoins.
 var ErrInsufficientFunds = errors.New("cannot withdraw, insufficient funds")
 
 // Wallet stores the number of Bitcoin someone owns.
