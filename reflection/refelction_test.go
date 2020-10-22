@@ -6,7 +6,6 @@ import (
 )
 
 func TestWalk(t *testing.T) {
-
 	cases := []struct {
 		Name          string
 		Input         interface{}
@@ -50,6 +49,14 @@ func TestWalk(t *testing.T) {
 				Profile{33, "London"},
 			},
 			[]string{"Chris", "London"},
+		},
+		{
+			"Slices",
+			[]Profile{
+				{33, "London"},
+				{34, "Reykjavik"},
+			},
+			[]string{"London", "Reykjavik"},
 		},
 	}
 
